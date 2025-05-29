@@ -15,17 +15,17 @@ public class DemoController {
     @Autowired
     private DemoService demoService;
 
-    @GetMapping(path = "/all")
+    @GetMapping(path="/all")
     public ResponseEntity<List<Demo>> getAllItems() {
         return ResponseEntity.ok().body(demoService.getAllItems());
     }
 
-    @GetMapping(path = "/welcome")
+    @GetMapping(path="/welcome")
     public ResponseEntity<String> welcome() {
         return ResponseEntity.ok().body("Welcome!!!");
     }
 
-    @GetMapping(path = "/bye")
+    @GetMapping(path="/bye")
     public ResponseEntity<String> bye() {
         return ResponseEntity.ok().body("Welcome!!!");
     }
@@ -35,12 +35,12 @@ public class DemoController {
         return ResponseEntity.ok().body(demoService.addNew(demo));
     }
 
-    @GetMapping(path = "/exception")
+    @GetMapping(path="/exception")
     public ResponseEntity<String> getException() throws Exception {
         throw new Exception("Exception thrown!!!");
     }
 
-    @GetMapping(path = "/bad-request")
+    @GetMapping(path="/bad-request")
     public ResponseEntity<String> getBadRequest() {
         return ResponseEntity.badRequest().body("BAD REQUEST!!!");
     }
