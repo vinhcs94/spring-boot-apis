@@ -25,6 +25,11 @@ public class DemoController {
         return ResponseEntity.ok().body("Welcome!!!");
     }
 
+    @GetMapping(path="/bye")
+    public ResponseEntity<String> bye() {
+        return ResponseEntity.ok().body("Welcome!!!");
+    }
+
     @PostMapping
     public ResponseEntity<Demo> addNew(@RequestBody Demo demo) {
         return ResponseEntity.ok().body(demoService.addNew(demo));
